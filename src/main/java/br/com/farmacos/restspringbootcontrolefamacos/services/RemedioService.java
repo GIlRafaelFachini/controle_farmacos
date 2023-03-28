@@ -1,6 +1,7 @@
 package br.com.farmacos.restspringbootcontrolefamacos.services;
 
-import br.com.farmacos.remedio.RemedioRepository;
+
+import br.com.farmacos.restspringbootcontrolefamacos.remedio.RemedioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

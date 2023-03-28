@@ -1,7 +1,7 @@
 package br.com.farmacos.restspringbootcontrolefamacos.controllers;
 
-import br.com.farmacos.remedio.*;
-import br.com.farmacos.services.RemedioService;
+import br.com.farmacos.restspringbootcontrolefamacos.remedio.*;
+import br.com.farmacos.restspringbootcontrolefamacos.services.RemedioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
@@ -46,13 +46,13 @@ public class RemedioController {
 		if (remedioExistente != null) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
 		}
-		var remedio = new Remedio(dados);
+		var remedio = new Remedio (dados);
 
 		repository.save(remedio);
 
 		var uri = uriBuilder.path("/remedios/{id}").buildAndExpand(remedio.getId()).toUri();
 
-		return ResponseEntity.created(uri).body(new DadosDetalhamentoRemedio(remedio));
+		return ResponseEntity.created(uri).body(new DadosDetalhamentoRemedio (remedio));
 
 	}
 

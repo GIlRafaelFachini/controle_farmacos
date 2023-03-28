@@ -1,6 +1,6 @@
 package br.com.farmacos.restspringbootcontrolefamacos.infra.security;
 
-import br.com.farmacos.usuario.Usuario;
+import br.com.farmacos.restspringbootcontrolefamacos.usuario.Usuario;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;

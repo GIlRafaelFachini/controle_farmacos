@@ -1,7 +1,7 @@
 package br.com.farmacos.restspringbootcontrolefamacos.services;
 
-import br.com.farmacos.usuario.Usuario;
-import br.com.farmacos.usuario.UsuarioRepository;
+import br.com.farmacos.restspringbootcontrolefamacos.usuario.Usuario;
+import br.com.farmacos.restspringbootcontrolefamacos.usuario.UsuarioRepository;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;

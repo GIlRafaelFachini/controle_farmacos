@@ -14,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("usuarios")
@@ -69,7 +71,7 @@ public class UsuarioController {
 			@io.swagger.v3.oas.annotations.responses.ApiResponse( responseCode = "404",content = @Content),
 			@io.swagger.v3.oas.annotations.responses.ApiResponse( responseCode = "500",content = @Content),
 	})
-	public List<br.com.farmacos.usuario.DadosListagemUsuarios> listar() {
+	public List<DadosListagemUsuarios> listar() {
 		return repository.findAll().stream().map(DadosListagemUsuarios::new).toList();
 	}
 	@GetMapping("/{id}")
@@ -107,7 +109,6 @@ public class UsuarioController {
 	public ResponseEntity<DadosDetalhamentoUsuario> atualizar(
 			@RequestBody @Valid DadosAtualizacaoUsuario dados) {
 		var usuario = repository.getReferenceById(dados.id());
-		usuario.atualizarInformacoes(dados);
 		return ResponseEntity.ok(new DadosDetalhamentoUsuario(usuario));
 	}
 	

@@ -2,6 +2,8 @@ package br.com.farmacos.restspringbootcontrolefamacos.remedio;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -20,9 +22,13 @@ public class Remedio {
 	
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotBlank
 	private long id;
+	@NotBlank
 	private String nome;
+	@NotBlank
 	private String lote;
+	@Future
 	private LocalDate validade;
 	private Boolean ativo;
 	private int quantidade;
@@ -31,6 +37,7 @@ public class Remedio {
 	private Laboratorio laboratorio;
 	
 	@Enumerated(EnumType.STRING)
+	@NotBlank
 	private Via via;
 
 	public Remedio(DadosCadastroRemedio dados) {

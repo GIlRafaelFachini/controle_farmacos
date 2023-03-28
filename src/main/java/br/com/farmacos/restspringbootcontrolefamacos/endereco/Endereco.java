@@ -1,6 +1,8 @@
 package br.com.farmacos.restspringbootcontrolefamacos.endereco;
 
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +12,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Endereco {
-
+    @NotBlank
+    @Pattern(regexp = "\\d{8}")
     private String cep;
+    @NotBlank
     private String uf;
+    @NotBlank
     private String cidade;
+    @NotBlank
     private String bairro;
     private String complemento;
     private String numero;
